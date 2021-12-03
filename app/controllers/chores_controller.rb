@@ -1,5 +1,7 @@
 class ChoresController < ApplicationController
   before_action :set_chore, only: %i[ show edit update destroy ]
+  after_action :broadcast_insert, only: %i[create]
+  after_action :broadcast_remove, only: %i[destroy]
 
   # GET /chores or /chores.json
   def index
@@ -68,5 +70,33 @@ class ChoresController < ApplicationController
     # Only allow a list of trusted parameters through.
     def chore_params
       params.require(:chore).permit(:title, :content)
+    end
+
+    def broadcast_insert
+      return if @chore.errors.any?
+      Turbo::StreamsChannel.broadcast_append_to(
+        "chores",
+        target: "chores",
+        partial: "chores/chore",
+        locals: { chore: @chore }
+      )
+    end
+
+    def broadcast_update
+      return if @chore.errors.any?
+      Turbo::StreamsChannel.broadcast_replace_to(
+        "chores",
+        target: ActionView::RecordIdentifier.dom_id(@chore),
+        partial: "chores/chore",
+        locals: { chore: self }
+      )
+    end
+
+    def broadcast_remove
+      return unless @chore.destroyed?
+      Turbo::StreamsChannel.broadcast_remove_to(
+        "chores",
+        target: ActionView::RecordIdentifier.dom_id(@chore)
+      )
     end
 end
