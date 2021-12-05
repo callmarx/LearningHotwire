@@ -1,4 +1,6 @@
-require 'rails_helper'
+# frozen_string_literal: true
+
+require "rails_helper"
 
 RSpec.describe "chores/new", type: :view do
   before(:each) do
@@ -12,7 +14,6 @@ RSpec.describe "chores/new", type: :view do
     render
 
     assert_select "form[action=?][method=?]", chores_path, "post" do
-
       assert_select "input[name=?]", "chore[title]"
 
       assert_select "textarea[name=?]", "chore[content]"
