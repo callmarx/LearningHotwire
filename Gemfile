@@ -32,4 +32,3 @@ group :development do
   gem "rubycritic", require: false
   gem "web-console", ">= 4.1.0"
 end
-

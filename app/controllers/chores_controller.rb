@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ChoresController < ApplicationController
   before_action :set_chore, only: %i[ show edit update destroy ]
 
