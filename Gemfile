@@ -34,4 +34,3 @@ group :development do
   gem "rubocop-rspec", require: false
   gem "rubycritic", require: false
 end
-
