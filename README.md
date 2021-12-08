@@ -1,24 +1,14 @@
-# README
+# Aprendendo Hotwire
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[![License](https://img.shields.io/badge/License-MIT-lightgray)](/LICENSE)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-lightblue)](/pages/code_of_conduct.md)
+[![love](https://img.shields.io/badge/Code%20with-%F0%9F%96%A4-lightgreen)](https://callmarx.github.io/about/)
 
-Things you may want to cover:
+Tutorial sobre Rails 7 com esbuild, Tailwind e Hotwire. Veja no meu
+[Blog](https://callmarx.github.io/blog/2021/12/07/tutorial-rails7-hotwire.html)
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+O pano de fundo é uma aplicação estilo Kanban, com um quadro em que podemos incluir, ver, editar e
+excluir os cards/tarefas e isso ser persistido simultaneamente via *websockets* para todas as
+sessões abertas da aplicação. Note que incluí algumas
+[*branches*](https://github.com/callmarx/LearningHotwire/branches) que representam as partes
+abordas aqui.
