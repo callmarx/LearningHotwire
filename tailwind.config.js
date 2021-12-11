@@ -1,17 +1,12 @@
-const colors = require('tailwindcss/colors')
-
 module.exports = {
   mode: 'jit',
-  purge: [
+  content: [
     './app/views/**/*.html.erb',
     './app/helpers/**/*.rb',
     './app/javascript/**/*.js'
   ],
   theme: {
     extend: {
-      zIndex: ['hover'],
-      overflow: ['hover'],
-      visibility: ['hover'],
       spacing: {
         '100': '25rem',
         '104': '26rem',
@@ -19,13 +14,6 @@ module.exports = {
         '112': '28rem',
       },
       colors: {
-        amber: colors.amber,
-        blueGray: colors.blueGray,
-        fuchsia: colors.fuchsia,
-        indigo: colors.indigo,
-        orange: colors.orange,
-        rose: colors.rose,
-        teal: colors.teal,
         wood: {
           50: '#f7eee9',
           100: '#efddd3',
