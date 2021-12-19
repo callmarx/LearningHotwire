@@ -28,6 +28,7 @@ class ChoresController < ApplicationController
 
     respond_to do |format|
       if @chore.save
+        format.turbo_stream # include this
         format.html { redirect_to @chore, notice: "Chore was successfully created." }
         format.json { render :show, status: :created, location: @chore }
       else
@@ -54,6 +55,7 @@ class ChoresController < ApplicationController
   def destroy
     @chore.destroy
     respond_to do |format|
+      format.turbo_stream # include this
       format.html { redirect_to chores_url, notice: "Chore was successfully destroyed." }
       format.json { head :no_content }
     end
