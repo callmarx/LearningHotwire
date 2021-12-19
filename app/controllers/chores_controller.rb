@@ -84,16 +84,6 @@ class ChoresController < ApplicationController
       )
     end
 
-    def broadcast_update
-      return if @chore.errors.any?
-      Turbo::StreamsChannel.broadcast_replace_to(
-        "chores",
-        target: ActionView::RecordIdentifier.dom_id(@chore),
-        partial: "chores/chore",
-        locals: { chore: self }
-      )
-    end
-
     def broadcast_remove
       return unless @chore.destroyed?
       Turbo::StreamsChannel.broadcast_remove_to(
