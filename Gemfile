@@ -4,19 +4,19 @@ source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.0.3"
-gem "rails", "~> 7.0.0.rc3"
+gem "rails", "~> 7.0.2", ">= 7.0.2.3"
 
-gem "cssbundling-rails", ">= 1.0.0"
-gem "jbuilder", "~> 2.11.3"
-gem "jsbundling-rails", "~> 1.0.0"
+gem "cssbundling-rails"
+gem "jbuilder"
+gem "jsbundling-rails"
 gem "pg", "~> 1.1"
 gem "puma", "~> 5.5.2"
 gem "redis", "~> 4.5"
-gem "sprockets-rails", ">= 3.4.2"
-gem "stimulus-rails", ">= 1.0.0"
-gem "turbo-rails", ">= 1.0.0"
+gem "sprockets-rails"
+gem "stimulus-rails"
+gem "turbo-rails"
 
-gem "bootsnap", ">= 1.4.4", require: false
+gem "bootsnap", require: false
 
 group :development, :test do
   gem "byebug"
@@ -24,7 +24,7 @@ group :development, :test do
 end
 
 group :development do
-  gem "web-console", ">= 4.1.0"
+  gem "web-console"
 
   gem "foreman", require: false
   gem "rubocop", require: false
