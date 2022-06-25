@@ -1,9 +1,14 @@
-<h1>New chore</h1>
-
-<%= render "form", chore: @chore %>
-
-<br>
-
-<div>
-  <%= link_to "Back to chores", chores_path %>
-</div>
+<%= turbo_frame_tag "modal" do %>
+  <%= tag.div data: {
+      controller: "turbo-modal",
+      turbo_modal_target: "outside",
+      action: "turbo:submit-end->turbo-modal#submitEnd keyup@window->turbo-modal#closeWithKeyboard click@window->turbo-modal#closeBackground"
+    },
+    class: "flex justify-center z-40 fixed inset-0 bg-gray-600 bg-opacity-50 h-screen w-screen" do %>
+    <%= tag.div data: { turbo_modal_target: "form" },
+      class: "p-4 m-12 rounded-md w-2/3 h-2/3 bg-slate-200 rounded-md hover:bg-slate-400 transition duration-600 ease-linear" do %>
+      <%= render "form", chore: @chore %>
+      <%= button_tag "Close", data: { action: "turbo-modal#hideModal" }, type: "button", class: "rounded-lg py-3 px-5 bg-red-600 text-white" %>
+    <% end %>
+  <% end %>
+<% end %>
