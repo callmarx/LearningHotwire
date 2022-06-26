@@ -8,7 +8,6 @@ class ChoresController < ApplicationController
   # GET /chores or /chores.json
   def index
     @chores = Chore.all
-    @chore = Chore.new
   end
 
   # GET /chores/1 or /chores/1.json
@@ -30,7 +29,6 @@ class ChoresController < ApplicationController
 
     respond_to do |format|
       if @chore.save
-        format.turbo_stream
         format.html { redirect_to @chore, notice: "Chore was successfully created." }
         format.json { render :show, status: :created, location: @chore }
       else
