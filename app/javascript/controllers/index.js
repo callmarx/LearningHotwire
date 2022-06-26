@@ -7,5 +7,5 @@ import { application } from "./application"
 import HelloController from "./hello_controller.js"
 application.register("hello", HelloController)
 
-import TurboModalController from "./turbo_modal_controller.js"
-application.register("turbo-modal", TurboModalController)
+import ChoreModalController from "./chore_modal_controller.js"
+application.register("chore-modal", ChoreModalController)

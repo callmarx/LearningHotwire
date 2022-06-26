@@ -1,6 +1,6 @@
 import { Controller } from "@hotwired/stimulus"
 
-// Connects to data-controller="turbo-modal"
+// Connects to data-controller="chore-modal"
 export default class extends Controller {
   static targets = ["outside", "form"]
 
@@ -10,7 +10,7 @@ export default class extends Controller {
   }
 
   // hide modal
-  // action: "turbo-modal#hideModal"
+  // action: "chore-modal#hideModal"
   hideModal() {
     this.element.parentElement.removeAttribute("src")
     // Remove src reference from parent frame element
@@ -19,7 +19,7 @@ export default class extends Controller {
   }
 
   // hide modal on successful form submission
-  // action: "turbo:submit-end->turbo-modal#submitEnd"
+  // action: "turbo:submit-end->chore-modal#submitEnd"
   submitEnd(e) {
     if (e.detail.success) {
       this.hideModal()
@@ -27,7 +27,7 @@ export default class extends Controller {
   }
 
   // hide modal when clicking ESC
-  // action: "keyup@window->turbo-modal#closeWithKeyboard"
+  // action: "keyup@window->chore-modal#closeWithKeyboard"
   closeWithKeyboard(e) {
     if (e.code == "Escape") {
       this.hideModal()
@@ -35,7 +35,7 @@ export default class extends Controller {
   }
 
   // hide modal when clicking outside of modal
-  // action: "click@window->turbo-modal#closeBackground"
+  // action: "click@window->chore-modal#closeBackground"
   closeBackground(e) {
     if (e && this.formTarget.contains(e.target)) {
       return
