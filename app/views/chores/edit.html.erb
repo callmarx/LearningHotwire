@@ -1,10 +1,4 @@
-<h1>Editing chore</h1>
+<%= render ChoreModalComponent.new(title: "Editing Chore") do %>
+  <%= render "form", chore: @chore %>
+<% end %>
 
-<%= render "form", chore: @chore %>
-
-<br>
-
-<div>
-  <%= link_to "Show this chore", @chore %> |
-  <%= link_to "Back to chores", chores_path %>
-</div>
