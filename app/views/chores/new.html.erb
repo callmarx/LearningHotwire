@@ -1,3 +1,6 @@
 <%= turbo_frame_tag "modal" do %>
-  <%= render "form", chore: @chore %>
+  <%= tag.div data: { controller: "chore-modal" } do %>
+    <%= render "form", chore: @chore %>
+    <%= button_tag "Close", data: { action: "chore-modal#hideModal" }, type: "button", class: "fixed top-0 right-0 rounded-lg p-3 m-2 bg-red-700 text-white" %>
+  <% end %>
 <% end %>
