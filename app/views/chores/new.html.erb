@@ -1,6 +1,7 @@
 <%= turbo_frame_tag "modal" do %>
   <%= tag.div data: {
       controller: "chore-modal",
+      action: "turbo:submit-end->chore-modal#submitEnd"
     },
     class: "z-40 fixed flex justify-center inset-0 bg-gray-600 bg-opacity-50 h-screen w-screen" do %>
     <%= tag.div data: { chore_modal_target: "form" },
