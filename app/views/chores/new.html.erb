@@ -1,10 +1,11 @@
 <%= turbo_frame_tag "modal" do %>
   <%= tag.div data: {
       controller: "chore-modal",
-      action: "turbo:submit-end->chore-modal#submitEnd"
+      # include all other actions separated with space
+      action: "turbo:submit-end->chore-modal#submitEnd keyup@window->chore-modal#closeWithKeyboard click@window->chore-modal#closeBackground"
     },
     class: "z-40 fixed flex justify-center inset-0 bg-gray-600 bg-opacity-50 h-screen w-screen" do %>
-    <%= tag.div data: { chore_modal_target: "form" },
+    <%= tag.div data: { chore_modal_target: "form" }, # include this data
       class: "flex flex-col p-4 m-12 rounded-md w-2/3 h-2/3 bg-slate-200 rounded-md hover:bg-slate-400 transition duration-600 ease-linear" do %>
       <div class="flex justify-between">
         <div></div>
