@@ -1,7 +1,8 @@
 module.exports = {
   mode: 'jit',
   content: [
-    './app/views/**/*.html.erb',
+    './app/views/**/*.{erb,html}',
+    './app/components/**/*.{erb,html}',
     './app/helpers/**/*.rb',
     './app/javascript/**/*.js'
   ],

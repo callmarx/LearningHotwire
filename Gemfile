@@ -15,6 +15,7 @@ gem "redis", "~> 4.5"
 gem "sprockets-rails"
 gem "stimulus-rails"
 gem "turbo-rails"
+gem "view_component"
 
 gem "bootsnap", require: false
 
